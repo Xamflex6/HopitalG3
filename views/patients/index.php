@@ -32,7 +32,7 @@
                     <th>Date de Création</th>
                     <th>Date de Modification</th>
                     <th>Numéro de Lit</th>
-                    <th>Numéro de Chmabre</th>
+                    <th>Numéro de Chambre</th>
                 </tr>
             </thead>
             <?php
