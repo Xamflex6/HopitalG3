@@ -1,7 +1,5 @@
 <?php
   require_once 'models/Modele.php';
-  $ok = new Modele();
-  $kk = $ok->executerRequete('SELECT * FROM patient_intensif');
 ?>
 
 <!DOCTYPE html>

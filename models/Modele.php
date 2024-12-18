@@ -3,7 +3,7 @@
 class Modele {
 
   // Objet PDO d'accès à la BD
-  private $bdd;
+  private static $bdd;
   private $auth_sql = [
     'host' => '127.0.0.1',
     'port' => 3307,
@@ -29,16 +29,20 @@ class Modele {
     return $resultat;
   }
 
-  // Renvoie un objet de connexion à la BD en initialisant la connexion au besoin
-  private function getBdd() {
-    if ($this->bdd == null) {
-      $auth = $this->getAuth();
-      // Création de la connexion
-      $this->bdd = new PDO('mysql:host=' . $auth['host'] . ":" . $auth['port'] .';dbname=' . $auth['dbname'] . ';charset=' . $auth['charset'] . ';user=' . $auth['user'] . ';password=' . $auth['password']);
+  // Renvoie un objet de connexion à la BD en initialisant la connexion au besoin 
+  public static function getBdd($database = 'db_soins_intensifs') {
+    if (self::$bdd === null) {
+        try {
+          self::$bdd = new PDO('mysql:host=localhost:3307;dbname=' .$database. ';charset=utf8', 'root', '');
+          self::$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
     }
-    return $this->bdd;
+    return self::$bdd;
   }
 
+  
 }
 
 
