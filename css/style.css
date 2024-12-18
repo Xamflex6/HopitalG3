@@ -247,4 +247,196 @@ body {
     background-color: #1976D2;
   }
   
+  .patients-container {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+  }
+
+  .patients-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  #addPatientBtn {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #addPatientBtn:hover {
+    background-color: #1976D2;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  table th {
+    background-color: #f2f2f2;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  form div {
+    margin-bottom: 15px;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  form input[type="text"],
+  form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  form button[type="submit"]:hover {
+    background-color: #1976D2;
+  }
+
+  .container {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 2000px;
+  }
+
+  .box {
+    display: inline-block;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
   
+  .box a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .box a:hover {
+    background-color: #0056b3;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  display: flex;
+    color: #333;
+    justify-content: center;
+}
+
+.alert-list {
+    margin-top: 20px;
+}
+
+.alert {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+}
+
+.alert h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #d1100a;
+}
+
+.alert p {
+    margin: 10px 0;
+    color: #4e3e3e;
+}
+
+.timestamp {
+    display: block;
+    font-size: 0.9em;
+    color: #999;
+    text-align: right;
+}

@@ -20,10 +20,10 @@
   </header>
   <main>
     <div class="main-buttons">
-      <a href="Alerte.php" class="button">Alerte</a>
-      <a href="Equipement.php" class="button">Equipement</a>
-      <a href="views/lits/index.php" class="button">Lit</a>
-      <a href="Patient.php" class="button">Patient</a>
+      <a href="views/alertes" class="button">Alertes</a>
+      <a href="views/equipements" class="button">Equipements</a>
+      <a href="views/lits" class="button">Lits</a>
+      <a href="views/patients" class="button">Patients</a>
     </div>
   </main>
 </body>

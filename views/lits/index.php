@@ -21,9 +21,9 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Nom du Lit</th>
-                <th>Statut</th>
-                <th>Actions</th>
+                <th>Type de Lit</th>
+                <th>Status</th>
+                <th>Date de modification</th>
             </tr>
             </thead>
             <tr id="bedList">
@@ -38,7 +38,7 @@
             <form id="bedForm">
                 <input type="hidden" id="bedId">
                 <div>
-                    <label for="bedName">Nom du Lit:</label>
+                    <label for="bedName">Type de Lit:</label>
                     <input type="text" id="bedName" required>
                 </div>
                 <div>
