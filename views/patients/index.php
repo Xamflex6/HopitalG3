@@ -1,3 +1,4 @@
+
 <?php require '../../controllers/PatientController.php' ?>
 
 <!DOCTYPE html>

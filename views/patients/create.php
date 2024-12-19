@@ -1,4 +1,13 @@
 <?php
+/**
+ * Ce script gère l'ajout d'un nouveau patient en utilisant le `PatientController`.
+ * 
+ * Il inclut le contrôleur nécessaire, crée une instance de celui-ci, puis vérifie si la requête HTTP est de type POST.
+ * Si c'est le cas, il récupère les données du formulaire, génère une date actuelle pour les champs de création et de modification,
+ * et appelle la méthode `createPatient` du contrôleur pour enregistrer le nouveau patient dans la base de données.
+ */
+?>
+<?php
 include_once '../../controllers/PatientController.php';
 
 

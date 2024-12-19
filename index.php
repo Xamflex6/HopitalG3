@@ -1,4 +1,8 @@
 <?php
+// Inclusion du modèle pour interagir avec la base de données
+?>
+
+<?php
   require_once 'models/Modele.php';
 ?>
 

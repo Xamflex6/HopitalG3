@@ -1,4 +1,37 @@
 <?php
+/**
+ * Ce fichier représente la vue pour la gestion des équipements.
+ * 
+ * Il inclut les fichiers nécessaires pour le modèle et le contrôleur des équipements,
+ * initialise la connexion à la base de données et affiche une table des équipements
+ * avec pagination.
+ * 
+ * @package ProjetInterLocal
+ * @subpackage Views
+ * @category Equipements
+ * @version 1.0
+ */
+
+// Inclusion des fichiers de modèle et de contrôleur
+require_once '../../models/Modele.php';
+require_once '../../controllers/EquipementController.php';
+
+// Initialisation de la connexion à la base de données
+$db = Modele::getBdd(); 
+
+// Récupération de la page actuelle pour la pagination
+$currentPage = isset($_GET['page']) && $_GET['page'] >= 1 ? $_GET['page'] : 1;
+
+// Création d'une instance du contrôleur des équipements
+$equipementController = new EquipementController();
+
+// Récupération des équipements paginés
+$equipements = $equipementController->paginateEquipements($currentPage);
+
+// Récupération du nombre maximum de pages pour la pagination
+$pages = $equipementController->getMaxPages();
+?>
+<?php
     require_once '../../models/Modele.php';
     require_once '../../controllers/EquipementController.php';
 
@@ -64,8 +97,6 @@
             ?>
 
     </div>
-
-
     <div id="bedModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -89,3 +120,8 @@
     </div>
 </body>
 </html>
+<script>
+    document.getElementById('addBedBtn').addEventListener('click', function() {
+        window.location.href = 'create.php';
+    });
+</script>
