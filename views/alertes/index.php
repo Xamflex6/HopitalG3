@@ -1,3 +1,7 @@
+<?php 
+require_once '../../controllers\AlerteController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,28 +20,31 @@
 <body>
     <div class="container">
         <h1>Alertes</h1>
+        <div class="box">
+            <a href="create.php" class="btn btn-primary">Ajouter une alerte</a>
+        </div>
         <div class="alert-list">
-            <div class="alert">
-                <h2>Titre de l'alerte</h2>
-                <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellat aspernatur ipsam cum facilis, quia esse sequi culpa ex? Hic enim magnam corporis fuga? Porro consequuntur vitae expedita eveniet quia."</p>
-                <span class="timestamp">"heure"</span>
+            <?php 
+                $alertesController = new AlerteController();
+
+                $alertes = $alertesController->getAllAlerte(); 
+
+                if ($alertesController->getNombreAlerte() == 0) {
+                    echo "<p>Pas d'alertes pour le moment.</p>";
+                }
+                else {
+                    foreach ($alertes as $alerte) {
+                        echo "<div class=\"alert\">" ;
+                        echo "<h2 class =" .$alerte['resolu'] . ">" . "Alerte " . $alerte['alerte_id'] . " : " . $alerte['alerte_type'] . "</h2>";
+                        echo "<p>" . $alerte['alerte_description'] . "</p>";
+                        echo "<span class=\"timestamp\">" . $alerte['date_creation'] . "</span>";
+                        echo "</div>";
+                    }
+                }
+                
+            
+            ?>
             </div>
-            <div class="alert">
-                <h2>Titre de l'alerte</h2>
-                <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellat aspernatur ipsam cum facilis, quia esse sequi culpa ex? Hic enim magnam corporis fuga? Porro consequuntur vitae expedita eveniet quia."</p>
-                <span class="timestamp">"heure"</span>
-            </div>
-            <div class="alert">
-                <h2>Titre de l'alerte</h2>
-                <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellat aspernatur ipsam cum facilis, quia esse sequi culpa ex? Hic enim magnam corporis fuga? Porro consequuntur vitae expedita eveniet quia."</p>
-                <span class="timestamp">"heure"</span>
-            </div>
-            <div class="alert">
-                <h2>Titre de l'alerte</h2>
-                <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellat aspernatur ipsam cum facilis, quia esse sequi culpa ex? Hic enim magnam corporis fuga? Porro consequuntur vitae expedita eveniet quia."</p>
-                <span class="timestamp">"heure"</span>
-            </div>
-            <p>Pas d'alertes pour le moment.</p>
         </div>
     </div>
 </body>

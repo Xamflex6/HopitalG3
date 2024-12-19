@@ -62,9 +62,6 @@ require_once '../../controllers\LitController.php';
                     <td>{$lit['chambre']}</td>
                 </tr>";
             }
-           
-
-
             ?>
         </table>
     </div>
