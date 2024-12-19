@@ -8,9 +8,13 @@
 Point de montage : /home
 
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1)
+
 Capacité souhaitée : 2 Go
+
 Type de périphérique : LVM
+
 Système de fichiers : ext4
+
 
 - /backup 
 
