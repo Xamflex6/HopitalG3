@@ -23,7 +23,7 @@ class LitController {
 
     public function createLit($data) {
         $lit = new Lit();
-        if ($data['chambre']== NULL){
+        if ($data['chambre'] == NULL){
             $data['chambre'] = NULL; // cette ligne n'a aucun sens
         }
         

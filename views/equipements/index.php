@@ -1,3 +1,10 @@
+<?php
+    require_once '../../models/Modele.php';
+    require_once '../../controllers/EquipementController.php';
+
+    $db = Modele::getBdd(); 
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,9 +34,37 @@
             </tr>
             </thead>
             <tr id="bedList">
+            <?php
+                $currentPage = isset($_GET['page']) && $_GET['page'] >= 1 ? $_GET['page'] : 1;
+
+                $equipementController = new EquipementController();
+
+                $equipements = $equipementController->paginateEquipements($currentPage);
+
+                $pages = $equipementController->getMaxPages();
+                
+
+                foreach ($equipements as $equipement) {
+                    echo "<tr id='bedList'>";
+                    echo "<td>" . $equipement['equipement_id'] . "</td>";
+                    echo "<td>" . $equipement['type_equipement'] . "</td>";
+                    echo "<td>" . $equipement['disponible'] . "</td>";
+                    echo "<td>" . $equipement['date_modification'] . "</td>";
+                    echo "</tr>";
+                }
+            ?>   
             </tr>
         </table>
+        <div class="pagination">
+            <?php
+                echo "Pages : ";
+                for ($i = 1; $i <= $pages; $i++) {
+                    echo "<a href='?page=$i'>$i</a> ";
+                }
+            ?>
+
     </div>
+
 
     <div id="bedModal" class="modal">
         <div class="modal-content">
