@@ -1,3 +1,7 @@
+<?php 
+require_once '../../controllers\LitController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,18 +20,52 @@
 <body>
     <div class="containerLit">
         <h1>Gestion des Lits Disponibles</h1>
-        <button id="addBedBtn">Ajouter un Lit</button>
+        <div class="box">
+            <a href="create.php" class="btn btn-primary">Ajouter un lit</a>
+        </div>
+        <div>
+            Nombre de lit disponible
+            <?php 
+                $nombreLit = new LitController();
+                $resultat = $nombreLit->nombreLitDisponible();
+                echo $resultat[0] . "/" . $resultat[1];
+            ?>
+
+        </div>
+        
         <table>
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Type de Lit</th>
-                <th>Status</th>
+                <th>Numéro</th>
+                <th>Disponibilité</th>
+                <th>Type de lit</th>
+                <th>Date de Création</th>
                 <th>Date de modification</th>
+                <th>Numéro de chambre</th>
             </tr>
             </thead>
             <tr id="bedList">
             </tr>
+            <?php
+            $lits = new LitController();
+
+            $lits = $lits->getAllLit(); 
+
+
+            foreach ($lits as $lit) {
+                echo "<tr>
+                    <td>{$lit['lit_id']}</td>
+                    <td>{$lit['disponible']}</td>
+                    <td>{$lit['type_lit']}</td>
+                    <td>{$lit['date_creation']}</td>
+                    <td>{$lit['date_modification']}</td>
+                    <td>{$lit['chambre']}</td>
+                </tr>";
+            }
+           
+
+
+            ?>
         </table>
     </div>
 

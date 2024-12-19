@@ -11,6 +11,7 @@ class PatientController {
     }
 
     public function createPatient($data) {
+        
         // Appel du modèle pour insérer les données
         if ($this->patient->create($data)) {
             header("Location: ../patients/index.php");
