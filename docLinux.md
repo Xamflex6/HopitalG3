@@ -19,37 +19,56 @@ Système de fichiers : ext4
 - /backup 
 
 Point de montage : /backup
+
 Périphérique : Msft Virtual Disk (sda)
+
 Capacité souhaitée : 10 Go
+
 Type de périphérique : LVM
+
 Système de fichiers : xfs
+
 Nom : sda3
+
 
 - /srv 
 
 Point de montage : /srv
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1)
+
 Capacité souhaitée : 6 Go
+
 Type de périphérique : LVM
+
 Système de fichiers : ext4
+
 
 ###Système
 
 - / (root) 
 
 Point de montage : /
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1)
+
 Capacité souhaitée : 10 Go
+
 Type de périphérique : LVM (Logical Volume Management)
+
 Système de fichiers : ext4
 
 
 - /var
 
 Point de montage : /var
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1)
+
 Capacité souhaitée : 6 Go
+
 Type de périphérique : LVM
+
 Système de fichiers : ext4
 
 
@@ -57,27 +76,39 @@ Système de fichiers : ext4
 - /tmp 
 
 Point de montage : /tmp
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1)
+
 Capacité souhaitée : 1024 Mo (1 Go)
+
 Type de périphérique : LVM
+
 Système de fichiers : ext4
 
 
 - /boot 
 
 Point de montage : /boot
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1p1)
+
 Capacité souhaitée : 1024 Mo (1 Go)
+
 Type de périphérique : Partition standard
+
 Système de fichiers : ext4
 
 
 - swap 
 
 Point de montage : swap
+
 Périphérique : VMware Virtual NVMe Disk 1 (nvme0n1p2)
+
 Capacité souhaitée : 2 Go
+
 Type de périphérique : Partition standard
+
 Système de fichiers : swap
 
 
