@@ -118,6 +118,7 @@ Système de fichiers : swap
 
 Ce plan de sauvegarde vise à assurer la sécurité et la disponibilité des données critiques du serveur en automatisant les sauvegardes quotidiennes des répertoires importants. Les sauvegardes seront stockées dans une partition dédiée et seront conservées pendant une semaine.
 
+
 *Répertoires à Sauvegarder*
 
 - /etc
@@ -126,37 +127,46 @@ Ce plan de sauvegarde vise à assurer la sécurité et la disponibilité des don
 - /home
 - /root
 
+
 *Fréquence des Sauvegardes*
 
 Chaque jour à 2h du matin.
+
 
 *Durée de Conservation des Sauvegardes*
 
 Les sauvegardes seront conservées pendant une semaine.
 
+
 *Emplacement de Stockage*
 
 Les sauvegardes seront stockées dans la partition /backup.
+
 
 *Capacité du Support de Sauvegarde*
 
 La capacité de la partition /backup doit être suffisante pour stocker les sauvegardes pendant une semaine.
 
+
 *Durée Maximale de la Sauvegarde*
 
 La sauvegarde doit durer au maximum 5-10 minutes.
+
 
 *Durée Maximale de Restauration*
 
 La restauration d'un fichier ou d'un système de fichiers doit prendre au maximum 20 minutes.
 
+
 *Méthode de Sauvegarde*
 
 Sauvegarde incrémentielle avec rsync pour ne mettre à jour que les fichiers modifiés, réduisant ainsi le temps de sauvegarde et l'espace de stockage nécessaire.
 
+
 *Support de Sauvegarde*
 
 Une partition dédiée /backup sur le serveur.
+
 
 *Automatisation des Sauvegardes*
 
