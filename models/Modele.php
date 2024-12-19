@@ -1,5 +1,7 @@
 <?php
 
+//todo: hériter dla classe modele
+
 class Modele {
 
   // Objet PDO d'accès à la BD
@@ -41,8 +43,6 @@ class Modele {
     }
     return self::$bdd;
   }
-
-  
 }
 
 

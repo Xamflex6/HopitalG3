@@ -1,3 +1,12 @@
+<?php
+
+require_once __DIR__ . '/../../controllers/EquipementController.php';
+
+$EquipementController = new EquipementController();
+$equipements = $EquipementController->getEquipements();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +25,7 @@
 <body>
     <div class="containerLit">
         <h1>Gestion des Equipements</h1>
-        <button id="addBedBtn">Attribuer de l'équipement</button>
+        <button id="addBedBtn" onclick="window.location.href='create.php'">Attribuer de l'équipement</button>
         <table>
             <thead>
             <tr>
@@ -26,8 +35,22 @@
                 <th>Date de modification</th>
             </tr>
             </thead>
-            <tr id="bedList">
-            </tr>
+            <?php
+
+            $equipement = new EquipementController();
+
+            $equipement = $equipement->getAllEquipement(); 
+
+
+            foreach ($equipements as $equipement) {
+                echo "<tr>
+                    <td>{$equipement['equipement_id']}</td>
+                    <td>{$equipement['type_equipement']}</td>
+                    <td>{$equipement['disponible']}</td>
+                    <td>{$equipement['date_modification']}</td>
+                </tr>";
+            }
+            ?>
         </table>
     </div>
 

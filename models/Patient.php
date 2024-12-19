@@ -20,7 +20,7 @@ class Patient {
 
     public function create($data) {
         // TODO : USE SETTERS
-        $sql = "INSERT INTO patient_intensif (nom, prenom, date_naissance, contact, adresse, date_creation, date_modification, lit_id) VALUES (:nom, :prenom, :date_naissance, :contact, :adresse, :date_creation, :date_modification, :lit_id)";
+        $sql = "INSERT INTO patient_intensif (nom, prenom, date_naissance, contact, adresse, date_creation, date_modification) VALUES (:nom, :prenom, :date_naissance, :contact, :adresse, :date_creation, :date_modification)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
         $stmt->bindParam(':prenom', $data['prenom'], PDO::PARAM_STR);
@@ -29,7 +29,6 @@ class Patient {
         $stmt->bindParam(':adresse', $data['adresse'], PDO::PARAM_STR);
         $stmt->bindParam(':date_creation', $data['date_creation']);
         $stmt->bindParam(':date_modification', $data['date_modification']);
-        $stmt->bindParam(':lit_id', $data['lit_id'], PDO::PARAM_INT);
         if ($stmt->execute()) {
             return true;
         } else {
