@@ -426,7 +426,7 @@ h1 {
 .alert h2 {
     margin: 0;
     font-size: 1.5em;
-    color: #d1100a;
+   
 }
 
 .alert p {
@@ -577,3 +577,12 @@ body {
   text-decoration: underline;
   color: #2980b9;
 }
+
+.vert {
+  color: green;
+}
+
+.rouge {
+  color:red;
+}
+
