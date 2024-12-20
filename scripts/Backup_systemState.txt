@@ -1,0 +1,11 @@
+# Chemin où la sauvegarde sera stockée
+$backupPath = "E:\Backups\SystemState"
+
+# Vérifier si le chemin existe, sinon le créer
+if (!(Test-Path -Path $backupPath)) {
+    New-Item -ItemType Directory -Path $backupPath
+}
+
+# Lancer la sauvegarde du System State
+wbadmin start systemstatebackup -backuptarget:$backupPath -quiet
+Write-Host "System State backup completed successfully. Location: $backupPath"

@@ -1,0 +1,33 @@
+# Chemins des fichiers DNS et DHCP
+$dnsPath = "C:\Windows\System32\dns"
+$dhcpPath = "C:\Windows\System32\dhcp"
+
+# Chemin de destination pour les sauvegardes
+$backupPath = "E:\Backups\DNS-DHCP"
+
+# Obtenir la date pour un sous-dossier unique
+$date = Get-Date -Format "yyyy-MM-dd"
+$backupFolder = Join-Path -Path $backupPath -ChildPath $date
+
+# Vérifier si le dossier de sauvegarde existe, sinon le créer
+if (!(Test-Path -Path $backupFolder)) {
+    New-Item -ItemType Directory -Path $backupFolder
+}
+
+# Sauvegarder DNS
+if (Test-Path -Path $dnsPath) {
+    Copy-Item -Path $dnsPath -Destination $backupFolder\DNS -Recurse -Force
+    Write-Host "DNS files backed up successfully to $backupFolder\DNS"
+} else {
+    Write-Host "DNS path not found: $dnsPath"
+}
+
+# Sauvegarder DHCP
+if (Test-Path -Path $dhcpPath) {
+    Copy-Item -Path $dhcpPath -Destination $backupFolder\DHCP -Recurse -Force
+    Write-Host "DHCP files backed up successfully to $backupFolder\DHCP"
+} else {
+    Write-Host "DHCP path not found: $dhcpPath"
+}
+
+Write-Host "DNS and DHCP backup completed. Location: $backupFolder"
